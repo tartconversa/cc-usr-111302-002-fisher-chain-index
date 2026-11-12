@@ -1,0 +1,16 @@
+{
+  "period_order": [
+    "p0",
+    "p1",
+    "p2"
+  ],
+  "base": "p0",
+  "rebase": "p1",
+  "direct_comparison": [
+    "p0",
+    "p2"
+  ],
+  "matching": "product_and_quality",
+  "decimal_precision": 40,
+  "tolerance": 1e-10
+}

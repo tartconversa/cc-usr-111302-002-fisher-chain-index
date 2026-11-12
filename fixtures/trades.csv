@@ -1,0 +1,8 @@
+period,product,quality,p,q,unit
+p0,a,v1,1,2,unit
+p0,b,v1,2,1,unit
+p1,a,v1,2,1,unit
+p1,b,v1,1,2,unit
+p2,a,v1,3,2,unit
+p2,b,v1,2,1,unit
+p2,new,v1,4,1,unit

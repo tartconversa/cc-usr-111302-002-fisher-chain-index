@@ -1,0 +1,24 @@
+{
+  "products": [
+    {
+      "product": "a",
+      "quality": "v1"
+    },
+    {
+      "product": "b",
+      "quality": "v1"
+    },
+    {
+      "product": "new",
+      "quality": "v1"
+    }
+  ],
+  "units": {
+    "unit": {
+      "to_base_quantity": "1"
+    },
+    "thousand": {
+      "to_base_quantity": "1000"
+    }
+  }
+}

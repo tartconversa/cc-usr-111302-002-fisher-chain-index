@@ -1,0 +1,17 @@
+[
+  {
+    "path": "fixtures/indices.json",
+    "sha256": "32bb10abb4eb903303870ac2624ed202cdb7621b4c7e0beb549614f1f4b8c64e",
+    "size_bytes": 226
+  },
+  {
+    "path": "fixtures/products.json",
+    "sha256": "e819f54d7fde1f261c852eb21836fdc8cbc2d59e73ee378b2249b6107d2e9c01",
+    "size_bytes": 322
+  },
+  {
+    "path": "fixtures/trades.csv",
+    "sha256": "8b63cabbf327b56c6771ac31e6b93e91101b3e8c106ddbfbac78621c178b5a7d",
+    "size_bytes": 153
+  }
+]

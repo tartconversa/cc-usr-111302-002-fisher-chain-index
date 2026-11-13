@@ -1,0 +1,19 @@
+{
+  "period_order": [
+    "m0",
+    "m1",
+    "m2",
+    "m3",
+    "m4",
+    "m5"
+  ],
+  "base": "m0",
+  "rebase": "m1",
+  "direct_comparison": [
+    "m0",
+    "m1"
+  ],
+  "matching": "product_and_quality",
+  "decimal_precision": 40,
+  "tolerance": 1e-10
+}

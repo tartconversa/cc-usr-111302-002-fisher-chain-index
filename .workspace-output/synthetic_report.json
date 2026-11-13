@@ -1,0 +1,792 @@
+{
+  "generated_at": "2026-11-13T09:04:54.206666+00:00",
+  "inputs": {
+    "trades": {
+      "path": "synthetic_example/trades.csv",
+      "sha256": "db0a3b569e73bd3ce89fa74dca97fb1eb4773dc7c24d40f5b9de7ac656c38f85"
+    },
+    "products": {
+      "path": "synthetic_example/products.json",
+      "sha256": "c49c0f5776d3b2ce541b7ea7996f4eb89728d0f73e5a958d451ed32646305074"
+    },
+    "indices": {
+      "path": "synthetic_example/indices.json",
+      "sha256": "0c4c293add1555c4b7194628660d394e1a6e81e019799e14ca6f7a1e2f3a813e"
+    }
+  },
+  "config": {
+    "period_order": [
+      "m0",
+      "m1",
+      "m2",
+      "m3",
+      "m4",
+      "m5"
+    ],
+    "base": "m0",
+    "rebase": "m1",
+    "direct_comparison": [
+      "m0",
+      "m1"
+    ],
+    "matching": "product_and_quality",
+    "decimal_precision": 40,
+    "tolerance": "1E-10"
+  },
+  "scope_notice": "所有指数仅基于两期共同且有效的匹配产品集合；进入/退出产品单列覆盖变化，匹配集合指数不是完整市场价格指数",
+  "periods": [
+    {
+      "period": "m0",
+      "observation_keys": [
+        [
+          "alpha",
+          "v1"
+        ],
+        [
+          "beta",
+          "v1"
+        ]
+      ],
+      "market_expenditure": "2000",
+      "revisions": {
+        "alpha|v1": 0,
+        "beta|v1": 0
+      }
+    },
+    {
+      "period": "m1",
+      "observation_keys": [
+        [
+          "alpha",
+          "v1"
+        ],
+        [
+          "beta",
+          "v1"
+        ],
+        [
+          "gamma",
+          "v1"
+        ]
+      ],
+      "market_expenditure": "3000.100000",
+      "revisions": {
+        "alpha|v1": 0,
+        "beta|v1": 0,
+        "gamma|v1": 0
+      }
+    },
+    {
+      "period": "m2",
+      "observation_keys": [
+        [
+          "alpha",
+          "v2"
+        ],
+        [
+          "gamma",
+          "v1"
+        ]
+      ],
+      "market_expenditure": "1080.160000",
+      "revisions": {
+        "alpha|v2": 0,
+        "gamma|v1": 0
+      }
+    },
+    {
+      "period": "m3",
+      "observation_keys": [],
+      "market_expenditure": null,
+      "revisions": {}
+    },
+    {
+      "period": "m4",
+      "observation_keys": [
+        [
+          "alpha",
+          "v2"
+        ],
+        [
+          "gamma",
+          "v1"
+        ]
+      ],
+      "market_expenditure": "1200.150000",
+      "revisions": {
+        "alpha|v2": 0,
+        "gamma|v1": 0
+      }
+    },
+    {
+      "period": "m5",
+      "observation_keys": [
+        [
+          "alpha",
+          "v2"
+        ],
+        [
+          "gamma",
+          "v1"
+        ]
+      ],
+      "market_expenditure": "1260.150000",
+      "revisions": {
+        "alpha|v2": 1,
+        "gamma|v1": 0
+      }
+    }
+  ],
+  "links": [
+    {
+      "period_0": "m0",
+      "period_1": "m1",
+      "status": "computable",
+      "not_computable_reasons": [],
+      "matched_keys": [
+        [
+          "alpha",
+          "v1"
+        ],
+        [
+          "beta",
+          "v1"
+        ]
+      ],
+      "excluded_keys": [],
+      "entries": [
+        [
+          "gamma",
+          "v1"
+        ]
+      ],
+      "exits": [],
+      "cross_weight_sums": {
+        "s00_p0q0": "2000",
+        "s10_p1q0": "5000",
+        "s01_p0q1": "2250",
+        "s11_p1q1": "3000"
+      },
+      "market_expenditure": {
+        "m0": "2000",
+        "m1": "3000.100000"
+      },
+      "matched_expenditure": {
+        "m0": "2000",
+        "m1": "3000"
+      },
+      "expenditure_coverage": {
+        "m0": "1",
+        "m1": "0.9999666677777407419752674910836305456485"
+      },
+      "price_index": {
+        "laspeyres": "2.5",
+        "paasche": "1.333333333333333333333333333333333333333",
+        "fisher": "1.825741858350553711523232609336007113175"
+      },
+      "quantity_index": {
+        "laspeyres": "1.125",
+        "paasche": "0.6",
+        "fisher": "0.8215838362577491701854546742012032009291"
+      },
+      "expenditure_ratio_check": {
+        "matched_expenditure_0": "2000",
+        "matched_expenditure_1": "3000",
+        "expenditure_ratio": "1.5",
+        "fisher_price_times_quantity": "1.499999999999999999999999999999999999999",
+        "absolute_error": "1E-39",
+        "tolerance": "1E-10",
+        "passed": true,
+        "denominator_scope": "matched_common_set"
+      }
+    },
+    {
+      "period_0": "m1",
+      "period_1": "m2",
+      "status": "computable",
+      "not_computable_reasons": [],
+      "matched_keys": [
+        [
+          "gamma",
+          "v1"
+        ]
+      ],
+      "excluded_keys": [],
+      "entries": [
+        [
+          "alpha",
+          "v2"
+        ]
+      ],
+      "exits": [
+        [
+          "alpha",
+          "v1"
+        ],
+        [
+          "beta",
+          "v1"
+        ]
+      ],
+      "cross_weight_sums": {
+        "s00_p0q0": "0.100000",
+        "s10_p1q0": "0.200000",
+        "s01_p0q1": "0.080000",
+        "s11_p1q1": "0.160000"
+      },
+      "market_expenditure": {
+        "m1": "3000.100000",
+        "m2": "1080.160000"
+      },
+      "matched_expenditure": {
+        "m1": "0.100000",
+        "m2": "0.160000"
+      },
+      "expenditure_coverage": {
+        "m1": "0.00003333222225925802473250891636945435152162",
+        "m2": "0.0001481262035254036439046067249296400533254"
+      },
+      "price_index": {
+        "laspeyres": "2",
+        "paasche": "2",
+        "fisher": "2"
+      },
+      "quantity_index": {
+        "laspeyres": "0.8",
+        "paasche": "0.8",
+        "fisher": "0.8"
+      },
+      "expenditure_ratio_check": {
+        "matched_expenditure_0": "0.100000",
+        "matched_expenditure_1": "0.160000",
+        "expenditure_ratio": "1.6",
+        "fisher_price_times_quantity": "1.6",
+        "absolute_error": "0.0",
+        "tolerance": "1E-10",
+        "passed": true,
+        "denominator_scope": "matched_common_set"
+      }
+    },
+    {
+      "period_0": "m2",
+      "period_1": "m3",
+      "status": "not_computable",
+      "not_computable_reasons": [
+        "period_without_observations"
+      ],
+      "matched_keys": [],
+      "excluded_keys": [],
+      "entries": [],
+      "exits": [],
+      "cross_weight_sums": null,
+      "market_expenditure": {},
+      "matched_expenditure": {},
+      "expenditure_coverage": {},
+      "price_index": {
+        "laspeyres": null,
+        "paasche": null,
+        "fisher": null
+      },
+      "quantity_index": {
+        "laspeyres": null,
+        "paasche": null,
+        "fisher": null
+      },
+      "expenditure_ratio_check": {
+        "expenditure_ratio": null,
+        "passed": false,
+        "denominator_scope": "matched_common_set",
+        "note": "Fisher 不完整，因子反转检验无法执行"
+      }
+    },
+    {
+      "period_0": "m3",
+      "period_1": "m4",
+      "status": "not_computable",
+      "not_computable_reasons": [
+        "period_without_observations"
+      ],
+      "matched_keys": [],
+      "excluded_keys": [],
+      "entries": [],
+      "exits": [],
+      "cross_weight_sums": null,
+      "market_expenditure": {},
+      "matched_expenditure": {},
+      "expenditure_coverage": {},
+      "price_index": {
+        "laspeyres": null,
+        "paasche": null,
+        "fisher": null
+      },
+      "quantity_index": {
+        "laspeyres": null,
+        "paasche": null,
+        "fisher": null
+      },
+      "expenditure_ratio_check": {
+        "expenditure_ratio": null,
+        "passed": false,
+        "denominator_scope": "matched_common_set",
+        "note": "Fisher 不完整，因子反转检验无法执行"
+      }
+    },
+    {
+      "period_0": "m4",
+      "period_1": "m5",
+      "status": "computable",
+      "not_computable_reasons": [],
+      "matched_keys": [
+        [
+          "alpha",
+          "v2"
+        ],
+        [
+          "gamma",
+          "v1"
+        ]
+      ],
+      "excluded_keys": [],
+      "entries": [],
+      "exits": [],
+      "cross_weight_sums": {
+        "s00_p0q0": "1200.150000",
+        "s10_p1q0": "1440.180000",
+        "s01_p0q1": "1050.125000",
+        "s11_p1q1": "1260.150000"
+      },
+      "market_expenditure": {
+        "m4": "1200.150000",
+        "m5": "1260.150000"
+      },
+      "matched_expenditure": {
+        "m4": "1200.150000",
+        "m5": "1260.150000"
+      },
+      "expenditure_coverage": {
+        "m4": "1",
+        "m5": "1"
+      },
+      "price_index": {
+        "laspeyres": "1.2",
+        "paasche": "1.2",
+        "fisher": "1.2"
+      },
+      "quantity_index": {
+        "laspeyres": "0.8749947923176269632962546348373120026663",
+        "paasche": "0.8749947923176269632962546348373120026663",
+        "fisher": "0.8749947923176269632962546348373120026663"
+      },
+      "expenditure_ratio_check": {
+        "matched_expenditure_0": "1200.150000",
+        "matched_expenditure_1": "1260.150000",
+        "expenditure_ratio": "1.049993750781152355955505561804774403200",
+        "fisher_price_times_quantity": "1.049993750781152355955505561804774403200",
+        "absolute_error": "0E-39",
+        "tolerance": "1E-10",
+        "passed": true,
+        "denominator_scope": "matched_common_set"
+      }
+    }
+  ],
+  "reverse_links": [
+    {
+      "forward": [
+        "m0",
+        "m1"
+      ],
+      "reverse": [
+        "m1",
+        "m0"
+      ],
+      "forward_fisher_price": "1.825741858350553711523232609336007113175",
+      "reverse_fisher_price": "0.5477225575051661134569697828008021339527",
+      "price_reciprocity_error": "5E-40",
+      "quantity_reciprocity_error": "2E-40",
+      "tolerance": "1E-10",
+      "passed": true
+    },
+    {
+      "forward": [
+        "m1",
+        "m2"
+      ],
+      "reverse": [
+        "m2",
+        "m1"
+      ],
+      "forward_fisher_price": "2",
+      "reverse_fisher_price": "0.5",
+      "price_reciprocity_error": "0.0",
+      "quantity_reciprocity_error": "0.000",
+      "tolerance": "1E-10",
+      "passed": true
+    },
+    {
+      "forward": [
+        "m2",
+        "m3"
+      ],
+      "reverse": [
+        "m3",
+        "m2"
+      ],
+      "passed": false,
+      "reason": "one_direction_not_computable"
+    },
+    {
+      "forward": [
+        "m3",
+        "m4"
+      ],
+      "reverse": [
+        "m4",
+        "m3"
+      ],
+      "passed": false,
+      "reason": "one_direction_not_computable"
+    },
+    {
+      "forward": [
+        "m4",
+        "m5"
+      ],
+      "reverse": [
+        "m5",
+        "m4"
+      ],
+      "forward_fisher_price": "1.2",
+      "reverse_fisher_price": "0.8333333333333333333333333333333333333333",
+      "price_reciprocity_error": "0E-39",
+      "quantity_reciprocity_error": "0E-39",
+      "tolerance": "1E-10",
+      "passed": true
+    }
+  ],
+  "chain": {
+    "segments": [
+      {
+        "segment": 0,
+        "periods": [
+          "m0",
+          "m1",
+          "m2"
+        ],
+        "base_period": "m0",
+        "chained_fisher_price": {
+          "m0": "1",
+          "m1": "1.825741858350553711523232609336007113175",
+          "m2": "3.651483716701107423046465218672014226350"
+        },
+        "chained_fisher_quantity": {
+          "m0": "1",
+          "m1": "0.8215838362577491701854546742012032009291",
+          "m2": "0.6572670690061993361483637393609625607433"
+        },
+        "chained_expenditure_ratio": {
+          "m0": "1",
+          "m1": "1.5",
+          "m2": "2.40"
+        },
+        "chain_factor_reversal_checks": [
+          {
+            "period": "m1",
+            "absolute_error": "1E-39",
+            "tolerance": "1E-10",
+            "passed": true,
+            "denominator_scope": "product_of_matched_link_expenditure_ratios"
+          },
+          {
+            "period": "m2",
+            "absolute_error": "1E-39",
+            "tolerance": "1E-10",
+            "passed": true,
+            "denominator_scope": "product_of_matched_link_expenditure_ratios"
+          }
+        ]
+      },
+      {
+        "segment": 1,
+        "periods": [
+          "m4",
+          "m5"
+        ],
+        "base_period": "m4",
+        "chained_fisher_price": {
+          "m4": "1",
+          "m5": "1.2"
+        },
+        "chained_fisher_quantity": {
+          "m4": "1",
+          "m5": "0.8749947923176269632962546348373120026663"
+        },
+        "chained_expenditure_ratio": {
+          "m4": "1",
+          "m5": "1.049993750781152355955505561804774403200"
+        },
+        "chain_factor_reversal_checks": [
+          {
+            "period": "m5",
+            "absolute_error": "0E-39",
+            "tolerance": "1E-10",
+            "passed": true,
+            "denominator_scope": "product_of_matched_link_expenditure_ratios"
+          }
+        ]
+      }
+    ],
+    "breaks": [
+      {
+        "period_0": "m2",
+        "period_1": "m3",
+        "reasons": [
+          "period_without_observations"
+        ]
+      },
+      {
+        "period_0": "m3",
+        "period_1": "m4",
+        "reasons": [
+          "period_without_observations"
+        ]
+      }
+    ],
+    "incomparable_intervals": [
+      {
+        "left_segment": 0,
+        "right_segment": 1,
+        "left_periods": [
+          "m0",
+          "m1",
+          "m2"
+        ],
+        "right_periods": [
+          "m4",
+          "m5"
+        ],
+        "reason": "chain_break_or_missing_period; no hard bridge across gap"
+      }
+    ]
+  },
+  "rebased": {
+    "new_base": "m1",
+    "segment_periods": [
+      "m0",
+      "m1",
+      "m2"
+    ],
+    "price_index": {
+      "m0": "0.5477225575051661134569697828008021339530",
+      "m1": "1",
+      "m2": "2"
+    },
+    "quantity_index": {
+      "m0": "1.217161238900369141015488406224004742117",
+      "m1": "1",
+      "m2": "0.8000000000000000000000000000000000000000"
+    },
+    "expenditure_ratio": {
+      "m0": "0.6666666666666666666666666666666666666667",
+      "m1": "1",
+      "m2": "1.6"
+    }
+  },
+  "direct_vs_chain": {
+    "period_0": "m0",
+    "period_1": "m1",
+    "direct_status": "computable",
+    "direct_matched_keys": [
+      [
+        "alpha",
+        "v1"
+      ],
+      [
+        "beta",
+        "v1"
+      ]
+    ],
+    "direct_fisher_price": "1.825741858350553711523232609336007113175",
+    "direct_fisher_quantity": "0.8215838362577491701854546742012032009291",
+    "direct_expenditure_ratio": "1.5",
+    "direct_factor_reversal": {
+      "matched_expenditure_0": "2000",
+      "matched_expenditure_1": "3000",
+      "expenditure_ratio": "1.5",
+      "fisher_price_times_quantity": "1.499999999999999999999999999999999999999",
+      "absolute_error": "1E-39",
+      "tolerance": "1E-10",
+      "passed": true,
+      "denominator_scope": "matched_common_set"
+    },
+    "same_chain_segment": true,
+    "chain_fisher_price": "1.825741858350553711523232609336007113175",
+    "chain_fisher_quantity": "0.8215838362577491701854546742012032009291",
+    "drift_absolute_price": "0E-39",
+    "drift_relative_price": "0",
+    "drift_absolute_quantity": "0E-40",
+    "drift_relative_quantity": "0",
+    "tolerance": "1E-10"
+  },
+  "coverage_changes": [
+    {
+      "period_0": "m0",
+      "period_1": "m1",
+      "entered_keys": [
+        [
+          "gamma",
+          "v1"
+        ]
+      ],
+      "exited_keys": [],
+      "quality_version_replacements": [],
+      "note": "进入/退出只改变覆盖范围，匹配集合指数不代表完整市场价格"
+    },
+    {
+      "period_0": "m1",
+      "period_1": "m2",
+      "entered_keys": [
+        [
+          "alpha",
+          "v2"
+        ]
+      ],
+      "exited_keys": [
+        [
+          "alpha",
+          "v1"
+        ],
+        [
+          "beta",
+          "v1"
+        ]
+      ],
+      "quality_version_replacements": [
+        {
+          "entered": [
+            "alpha",
+            "v2"
+          ],
+          "related_exited": [
+            [
+              "alpha",
+              "v1"
+            ]
+          ]
+        }
+      ],
+      "note": "进入/退出只改变覆盖范围，匹配集合指数不代表完整市场价格"
+    },
+    {
+      "period_0": "m2",
+      "period_1": "m3",
+      "entered_keys": [],
+      "exited_keys": [
+        [
+          "alpha",
+          "v2"
+        ],
+        [
+          "gamma",
+          "v1"
+        ]
+      ],
+      "quality_version_replacements": [],
+      "note": "进入/退出只改变覆盖范围，匹配集合指数不代表完整市场价格"
+    },
+    {
+      "period_0": "m3",
+      "period_1": "m4",
+      "entered_keys": [
+        [
+          "alpha",
+          "v2"
+        ],
+        [
+          "gamma",
+          "v1"
+        ]
+      ],
+      "exited_keys": [],
+      "quality_version_replacements": [],
+      "note": "进入/退出只改变覆盖范围，匹配集合指数不代表完整市场价格"
+    },
+    {
+      "period_0": "m4",
+      "period_1": "m5",
+      "entered_keys": [],
+      "exited_keys": [],
+      "quality_version_replacements": [],
+      "note": "进入/退出只改变覆盖范围，匹配集合指数不代表完整市场价格"
+    }
+  ],
+  "cached_link_summaries": [
+    {
+      "periods": [
+        "m0",
+        "m1"
+      ],
+      "matched_keys": [
+        [
+          "alpha",
+          "v1"
+        ],
+        [
+          "beta",
+          "v1"
+        ]
+      ],
+      "matched_count": 2,
+      "cross_weight_sums": {
+        "s00_p0q0": "2000",
+        "s10_p1q0": "5000",
+        "s01_p0q1": "2250",
+        "s11_p1q1": "3000"
+      },
+      "excluded_count": 0
+    },
+    {
+      "periods": [
+        "m1",
+        "m2"
+      ],
+      "matched_keys": [
+        [
+          "gamma",
+          "v1"
+        ]
+      ],
+      "matched_count": 1,
+      "cross_weight_sums": {
+        "s00_p0q0": "0.100000",
+        "s10_p1q0": "0.200000",
+        "s01_p0q1": "0.080000",
+        "s11_p1q1": "0.160000"
+      },
+      "excluded_count": 0
+    },
+    {
+      "periods": [
+        "m4",
+        "m5"
+      ],
+      "matched_keys": [
+        [
+          "alpha",
+          "v2"
+        ],
+        [
+          "gamma",
+          "v1"
+        ]
+      ],
+      "matched_count": 2,
+      "cross_weight_sums": {
+        "s00_p0q0": "1200.150000",
+        "s10_p1q0": "1440.180000",
+        "s01_p0q1": "1050.125000",
+        "s11_p1q1": "1260.150000"
+      },
+      "excluded_count": 0
+    }
+  ]
+}

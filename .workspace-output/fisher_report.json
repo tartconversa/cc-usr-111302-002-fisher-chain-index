@@ -1,0 +1,452 @@
+{
+  "generated_at": "2026-11-13T08:53:51.077538+00:00",
+  "inputs": {
+    "trades": {
+      "path": "fixtures/trades.csv",
+      "sha256": "8b63cabbf327b56c6771ac31e6b93e91101b3e8c106ddbfbac78621c178b5a7d"
+    },
+    "products": {
+      "path": "fixtures/products.json",
+      "sha256": "e819f54d7fde1f261c852eb21836fdc8cbc2d59e73ee378b2249b6107d2e9c01"
+    },
+    "indices": {
+      "path": "fixtures/indices.json",
+      "sha256": "32bb10abb4eb903303870ac2624ed202cdb7621b4c7e0beb549614f1f4b8c64e"
+    }
+  },
+  "config": {
+    "period_order": [
+      "p0",
+      "p1",
+      "p2"
+    ],
+    "base": "p0",
+    "rebase": "p1",
+    "direct_comparison": [
+      "p0",
+      "p2"
+    ],
+    "matching": "product_and_quality",
+    "decimal_precision": 40,
+    "tolerance": "1E-10"
+  },
+  "scope_notice": "所有指数仅基于两期共同且有效的匹配产品集合；进入/退出产品单列覆盖变化，匹配集合指数不是完整市场价格指数",
+  "periods": [
+    {
+      "period": "p0",
+      "observation_keys": [
+        [
+          "a",
+          "v1"
+        ],
+        [
+          "b",
+          "v1"
+        ]
+      ],
+      "market_expenditure": "4",
+      "revisions": {
+        "a|v1": 0,
+        "b|v1": 0
+      }
+    },
+    {
+      "period": "p1",
+      "observation_keys": [
+        [
+          "a",
+          "v1"
+        ],
+        [
+          "b",
+          "v1"
+        ]
+      ],
+      "market_expenditure": "4",
+      "revisions": {
+        "a|v1": 0,
+        "b|v1": 0
+      }
+    },
+    {
+      "period": "p2",
+      "observation_keys": [
+        [
+          "a",
+          "v1"
+        ],
+        [
+          "b",
+          "v1"
+        ],
+        [
+          "new",
+          "v1"
+        ]
+      ],
+      "market_expenditure": "12",
+      "revisions": {
+        "a|v1": 0,
+        "b|v1": 0,
+        "new|v1": 0
+      }
+    }
+  ],
+  "links": [
+    {
+      "period_0": "p0",
+      "period_1": "p1",
+      "status": "computable",
+      "not_computable_reasons": [],
+      "matched_keys": [
+        [
+          "a",
+          "v1"
+        ],
+        [
+          "b",
+          "v1"
+        ]
+      ],
+      "excluded_keys": [],
+      "entries": [],
+      "exits": [],
+      "cross_weight_sums": {
+        "s00_p0q0": "4",
+        "s10_p1q0": "5",
+        "s01_p0q1": "5",
+        "s11_p1q1": "4"
+      },
+      "market_expenditure": {
+        "p0": "4",
+        "p1": "4"
+      },
+      "matched_expenditure": {
+        "p0": "4",
+        "p1": "4"
+      },
+      "expenditure_coverage": {
+        "p0": "1",
+        "p1": "1"
+      },
+      "price_index": {
+        "laspeyres": "1.25",
+        "paasche": "0.8",
+        "fisher": "1.00"
+      },
+      "quantity_index": {
+        "laspeyres": "1.25",
+        "paasche": "0.8",
+        "fisher": "1.00"
+      },
+      "expenditure_ratio_check": {
+        "matched_expenditure_0": "4",
+        "matched_expenditure_1": "4",
+        "expenditure_ratio": "1",
+        "fisher_price_times_quantity": "1.0000",
+        "absolute_error": "0.0000",
+        "tolerance": "1E-10",
+        "passed": true,
+        "denominator_scope": "matched_common_set"
+      }
+    },
+    {
+      "period_0": "p1",
+      "period_1": "p2",
+      "status": "computable",
+      "not_computable_reasons": [],
+      "matched_keys": [
+        [
+          "a",
+          "v1"
+        ],
+        [
+          "b",
+          "v1"
+        ]
+      ],
+      "excluded_keys": [],
+      "entries": [
+        [
+          "new",
+          "v1"
+        ]
+      ],
+      "exits": [],
+      "cross_weight_sums": {
+        "s00_p0q0": "4",
+        "s10_p1q0": "7",
+        "s01_p0q1": "5",
+        "s11_p1q1": "8"
+      },
+      "market_expenditure": {
+        "p1": "4",
+        "p2": "12"
+      },
+      "matched_expenditure": {
+        "p1": "4",
+        "p2": "8"
+      },
+      "expenditure_coverage": {
+        "p1": "1",
+        "p2": "0.6666666666666666666666666666666666666667"
+      },
+      "price_index": {
+        "laspeyres": "1.75",
+        "paasche": "1.6",
+        "fisher": "1.673320053068151095956344051570374978786"
+      },
+      "quantity_index": {
+        "laspeyres": "1.25",
+        "paasche": "1.142857142857142857142857142857142857143",
+        "fisher": "1.195228609334393639968817179693124984847"
+      },
+      "expenditure_ratio_check": {
+        "matched_expenditure_0": "4",
+        "matched_expenditure_1": "8",
+        "expenditure_ratio": "2",
+        "fisher_price_times_quantity": "2.000000000000000000000000000000000000001",
+        "absolute_error": "1E-39",
+        "tolerance": "1E-10",
+        "passed": true,
+        "denominator_scope": "matched_common_set"
+      }
+    }
+  ],
+  "reverse_links": [
+    {
+      "forward": [
+        "p0",
+        "p1"
+      ],
+      "reverse": [
+        "p1",
+        "p0"
+      ],
+      "forward_fisher_price": "1.00",
+      "reverse_fisher_price": "1.00",
+      "price_reciprocity_error": "0.0000",
+      "quantity_reciprocity_error": "0.0000",
+      "tolerance": "1E-10",
+      "passed": true
+    },
+    {
+      "forward": [
+        "p1",
+        "p2"
+      ],
+      "reverse": [
+        "p2",
+        "p1"
+      ],
+      "forward_fisher_price": "1.673320053068151095956344051570374978786",
+      "reverse_fisher_price": "0.5976143046671968199844085898465624924234",
+      "price_reciprocity_error": "0E-39",
+      "quantity_reciprocity_error": "0E-39",
+      "tolerance": "1E-10",
+      "passed": true
+    }
+  ],
+  "chain": {
+    "segments": [
+      {
+        "segment": 0,
+        "periods": [
+          "p0",
+          "p1",
+          "p2"
+        ],
+        "base_period": "p0",
+        "chained_fisher_price": {
+          "p0": "1",
+          "p1": "1.00",
+          "p2": "1.673320053068151095956344051570374978786"
+        },
+        "chained_fisher_quantity": {
+          "p0": "1",
+          "p1": "1.00",
+          "p2": "1.195228609334393639968817179693124984847"
+        },
+        "chained_expenditure_ratio": {
+          "p0": "1",
+          "p1": "1",
+          "p2": "2"
+        },
+        "chain_factor_reversal_checks": [
+          {
+            "period": "p1",
+            "absolute_error": "0.0000",
+            "tolerance": "1E-10",
+            "passed": true,
+            "denominator_scope": "product_of_matched_link_expenditure_ratios"
+          },
+          {
+            "period": "p2",
+            "absolute_error": "1E-39",
+            "tolerance": "1E-10",
+            "passed": true,
+            "denominator_scope": "product_of_matched_link_expenditure_ratios"
+          }
+        ]
+      }
+    ],
+    "breaks": [],
+    "incomparable_intervals": []
+  },
+  "rebased": {
+    "new_base": "p1",
+    "segment_periods": [
+      "p0",
+      "p1",
+      "p2"
+    ],
+    "price_index": {
+      "p0": "1",
+      "p1": "1",
+      "p2": "1.673320053068151095956344051570374978786"
+    },
+    "quantity_index": {
+      "p0": "1",
+      "p1": "1",
+      "p2": "1.195228609334393639968817179693124984847"
+    },
+    "expenditure_ratio": {
+      "p0": "1",
+      "p1": "1",
+      "p2": "2"
+    }
+  },
+  "direct_vs_chain": {
+    "period_0": "p0",
+    "period_1": "p2",
+    "direct_status": "computable",
+    "direct_matched_keys": [
+      [
+        "a",
+        "v1"
+      ],
+      [
+        "b",
+        "v1"
+      ]
+    ],
+    "direct_fisher_price": "2",
+    "direct_fisher_quantity": "1",
+    "direct_expenditure_ratio": "2",
+    "direct_factor_reversal": {
+      "matched_expenditure_0": "4",
+      "matched_expenditure_1": "8",
+      "expenditure_ratio": "2",
+      "fisher_price_times_quantity": "2",
+      "absolute_error": "0",
+      "tolerance": "1E-10",
+      "passed": true,
+      "denominator_scope": "matched_common_set"
+    },
+    "same_chain_segment": true,
+    "chain_fisher_price": "1.673320053068151095956344051570374978786",
+    "chain_fisher_quantity": "1.195228609334393639968817179693124984847",
+    "drift_absolute_price": "-0.326679946931848904043655948429625021214",
+    "drift_relative_price": "-0.163339973465924452021827974214812510607",
+    "drift_absolute_quantity": "0.195228609334393639968817179693124984847",
+    "drift_relative_quantity": "0.195228609334393639968817179693124984847",
+    "tolerance": "1E-10"
+  },
+  "coverage_changes": [
+    {
+      "period_0": "p0",
+      "period_1": "p1",
+      "entered_keys": [],
+      "exited_keys": [],
+      "quality_version_replacements": [],
+      "note": "进入/退出只改变覆盖范围，匹配集合指数不代表完整市场价格"
+    },
+    {
+      "period_0": "p1",
+      "period_1": "p2",
+      "entered_keys": [
+        [
+          "new",
+          "v1"
+        ]
+      ],
+      "exited_keys": [],
+      "quality_version_replacements": [],
+      "note": "进入/退出只改变覆盖范围，匹配集合指数不代表完整市场价格"
+    }
+  ],
+  "cached_link_summaries": [
+    {
+      "periods": [
+        "p0",
+        "p1"
+      ],
+      "matched_keys": [
+        [
+          "a",
+          "v1"
+        ],
+        [
+          "b",
+          "v1"
+        ]
+      ],
+      "matched_count": 2,
+      "cross_weight_sums": {
+        "s00_p0q0": "4",
+        "s10_p1q0": "5",
+        "s01_p0q1": "5",
+        "s11_p1q1": "4"
+      },
+      "excluded_count": 0
+    },
+    {
+      "periods": [
+        "p1",
+        "p2"
+      ],
+      "matched_keys": [
+        [
+          "a",
+          "v1"
+        ],
+        [
+          "b",
+          "v1"
+        ]
+      ],
+      "matched_count": 2,
+      "cross_weight_sums": {
+        "s00_p0q0": "4",
+        "s10_p1q0": "7",
+        "s01_p0q1": "5",
+        "s11_p1q1": "8"
+      },
+      "excluded_count": 0
+    },
+    {
+      "periods": [
+        "p0",
+        "p2"
+      ],
+      "matched_keys": [
+        [
+          "a",
+          "v1"
+        ],
+        [
+          "b",
+          "v1"
+        ]
+      ],
+      "matched_count": 2,
+      "cross_weight_sums": {
+        "s00_p0q0": "4",
+        "s10_p1q0": "8",
+        "s01_p0q1": "4",
+        "s11_p1q1": "8"
+      },
+      "excluded_count": 0
+    }
+  ]
+}

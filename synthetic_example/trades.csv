@@ -1,0 +1,13 @@
+period,product,quality,p,q,unit,revision
+m0,alpha,v1,10,100,unit,0
+m0,beta,v1,20,50,unit,0
+m1,alpha,v1,40,25,unit,0
+m1,beta,v1,20,100,unit,0
+m1,gamma,v1,0.002,50,thousand,0
+m2,alpha,v2,12,90,unit,0
+m2,gamma,v1,0.000004,40000,unit,0
+m4,alpha,v2,15,80,unit,0
+m4,gamma,v1,0.000005,30000,unit,0
+m5,alpha,v2,16,70,unit,0
+m5,alpha,v2,18,70,unit,1
+m5,gamma,v1,0.000006,25000,unit,0

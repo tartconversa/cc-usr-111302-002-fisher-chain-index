@@ -1,0 +1,28 @@
+{
+  "products": [
+    {
+      "product": "alpha",
+      "quality": "v1"
+    },
+    {
+      "product": "alpha",
+      "quality": "v2"
+    },
+    {
+      "product": "beta",
+      "quality": "v1"
+    },
+    {
+      "product": "gamma",
+      "quality": "v1"
+    }
+  ],
+  "units": {
+    "unit": {
+      "to_base_quantity": "1"
+    },
+    "thousand": {
+      "to_base_quantity": "1000"
+    }
+  }
+}
